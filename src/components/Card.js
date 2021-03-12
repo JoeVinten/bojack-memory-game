@@ -84,7 +84,7 @@ const Card = ({ updateScore }) => {
     //   console.log("reset");
     // } else {
 
-    //   updateScore();
+    updateScore();
 
     // }
   };
