@@ -15,6 +15,10 @@ const CardRow = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 450px) {
+    max-width: 100%;
+  }
 `;
 
 const CardItem = styled.div`
