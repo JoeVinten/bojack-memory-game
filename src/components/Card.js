@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 import bojack from "../images/bojack.png";
@@ -18,7 +18,6 @@ const CardRow = styled.div`
 `;
 
 const CardItem = styled.div`
-  /* background: white; */
   height: 250px;
   min-width: 150px;
   border-radius: 1.2em;

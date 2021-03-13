@@ -5,7 +5,6 @@ import Card from "./components/Card";
 
 function App() {
   const [score, setScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
 
   const updateScore = () => {
     setScore(prevState => prevState + 1);
@@ -18,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Scoreboard currentScore={score} highScore={highScore} />
+      <Scoreboard currentScore={score} />
       <Card updateScore={updateScore} endGame={endGame} />
     </div>
   );

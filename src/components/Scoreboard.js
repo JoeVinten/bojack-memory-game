@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 const ScoreboardContainer = styled.div`
@@ -13,12 +13,16 @@ const ScoreBoardItem = styled.div`
   font-weight: 800;
 `;
 
-const Scoreboard = props => {
+const Scoreboard = ({ currentScore }) => {
+  const [highScore, setHighScore] = useState(0);
+
+  if (currentScore > highScore) setHighScore(currentScore);
+
   return (
     <ScoreboardContainer>
-      <ScoreBoardItem>Current Score: {props.currentScore}</ScoreBoardItem>
+      <ScoreBoardItem>Current Score: {currentScore}</ScoreBoardItem>
 
-      <ScoreBoardItem>High Score: {props.highScore}</ScoreBoardItem>
+      <ScoreBoardItem>High Score: {highScore}</ScoreBoardItem>
     </ScoreboardContainer>
   );
 };
