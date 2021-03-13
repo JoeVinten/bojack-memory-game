@@ -62,6 +62,7 @@ const Card = ({ updateScore, endGame }) => {
 
     if (selectedCharacter.includes(currentElement)) {
       endGame();
+      setSelectedCharacter([]);
     } else {
       setSelectedCharacter(prevState => [...prevState, currentElement]);
       updateScore();
