@@ -1,6 +1,13 @@
-# Getting Started with Create React App
-
+# Bojack memory game
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This project is part of The Odin Project curriculum projects where you are given acceptance criteria and met these in your own way.
+
+## Features to add
+
+- Levels
+- Clearer winning
+- Better view on mobile
 
 ## Available Scripts
 
