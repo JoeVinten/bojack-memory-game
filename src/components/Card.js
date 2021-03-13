@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import bojack from "../images/bojack.png";
@@ -39,7 +39,7 @@ const Image = styled.img`
   user-select: none;
 `;
 
-const Card = ({ updateScore }) => {
+const Card = ({ updateScore, endGame }) => {
   const [characters, setCharacter] = useState([
     bojack,
     carolyn,
@@ -48,14 +48,7 @@ const Card = ({ updateScore }) => {
     sarah,
     todd
   ]);
-  const [selectedCharacter, setSelectedCharacter] = useState({
-    bojack: 0,
-    carolyn: 0,
-    diane: 0,
-    mrpeanutbutter: 0,
-    sarah: 0,
-    todd: 0
-  });
+  const [selectedCharacter, setSelectedCharacter] = useState([]);
 
   const handleClick = event => {
     setCharacter([...characters].sort(() => Math.random() - 0.5));
@@ -67,26 +60,12 @@ const Card = ({ updateScore }) => {
       .split(".")
       .shift();
 
-    // if (selectedCharacter[currentElement] === 0) {
-    //   setSelectedCharacter(prevState => {
-    //     prevState,
-    //       (selectedCharacter[currentElement] =
-    //         selectedCharacter[currentElement] + 1);
-    //   });
-    // }
-    console.log(selectedCharacter);
-
-    // setSelectedCharacter((selectedCharacter[currentElement] = "1"));
-    // if (selectedCharacter === 0) {
-    //   setSelectedCharacter();
-    // }
-    // if (selectedCharacter.currentElement) {
-    //   console.log("reset");
-    // } else {
-
-    updateScore();
-
-    // }
+    if (selectedCharacter.includes(currentElement)) {
+      endGame();
+    } else {
+      setSelectedCharacter(prevState => [...prevState, currentElement]);
+      updateScore();
+    }
   };
 
   return (

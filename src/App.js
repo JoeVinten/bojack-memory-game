@@ -11,16 +11,15 @@ function App() {
     setScore(prevState => prevState + 1);
   };
 
-  // const updateHighScore = () => {
-  //   setHighScore(prevState => {
-  //     if(prevState > )
-  //   })
-  // };
+  const endGame = () => {
+    setScore(0);
+  };
+
   return (
     <div className="App">
       <Header />
       <Scoreboard currentScore={score} highScore={highScore} />
-      <Card updateScore={updateScore} />
+      <Card updateScore={updateScore} endGame={endGame} />
     </div>
   );
 }
